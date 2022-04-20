@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+        crossorigin="anonymous"></script>
+    <title> Homepage </title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="title" align="center">
+            <h1>
+                Restaurant Data
+            </h1>
+        </div>
+        <div class="row ">
+            <div class="col-1 ">
+            </div>
+            <div class="col">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col">
+                            <div class="row ">
+                                <div class="col-2">
+                                </div>
+                                <div class="col-2">
+                                    <ul class="nav nav-tabs nav-justified" id="tab-title">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="enter_tab" data-bs-toggle="tab"
+                                                data-bs-target="#enter_content" type="button" role="tab"
+                                                aria-controls="home" aria-selected="true">輸入</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="search_tab" data-bs-toggle="tab"
+                                                data-bs-target="#search_content" type="button" role="tab"
+                                                aria-controls="profile" aria-selected="false">查詢</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                </div>
+                            </div>
+                            <div class="form row tab-pane fade show active id=" enter_tab">
+                                <div class="col-1">
+                                </div>
+                                <div class="col">
+                                    <div class="row tab-content border border-dark">
+                                        <div class="col tab-pane fade show active" id="enter_content" role="tabpanel"
+                                            aria-labelledby="enter_tab">
+                                            <form id="content" action='http://127.0.0.1:5000/form_enter' method='post'>
+                                                <div class="form-group">
+                                                    <label for="restaurantname"
+                                                        class="col-md-4 col-form-label">餐廳名稱</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control"
+                                                            id="formEnterRestaurantname" placeholder="restaurantname"
+                                                            name="formEnterRestaurantname">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="type" class="col-md-4 col-form-label">餐廳類型</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="formEnterType"
+                                                            placeholder="type" name="formEnterType">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputCounty ">縣市</label>
+                                                        <select id="inputCounty" class="form-control"
+                                                            name="inputCounty">
+                                                            <option selected>Choose</option>
+                                                            <option>台北市</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputState">區域</label>
+                                                        <select id="inputState" class="form-control" name="inputState">
+                                                            <option selected>Choose</option>
+                                                            <option>測試</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address" class="col-md-2 col-form-label">地址</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="formEnteraddress"
+                                                            placeholder="address" name="formEnteraddress">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="URL" class="col-md-2 col-form-label">網址</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="formEnterURL"
+                                                            placeholder="URL" name="formEnterURL">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label for="comment">簡評</label>
+                                                    <textarea class="form-control" id="formEntercomment"
+                                                        name="formEntercomment" rows="3"></textarea>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-5"></div>
+                                                    <div class="col">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            送出</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="search_content" role="tabpanel"
+                                            aria-labelledby="search_tab">
+                                            <form id="content" action='http://127.0.0.1:5000/form_search' method="post">
+                                                <div class="form-row ">
+                                                    <div class="form-group">
+                                                        <label for="restaurantname"
+                                                            class="col-md-4 col-form-label">餐廳名稱</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control"
+                                                                id="formGroupInputRestaurantname"
+                                                                placeholder="restaurantname" name="search_name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="inputType">餐廳類型</label>
+                                                        <select id="inputType" class="form-control" name=search_type>
+                                                            <option selected>Choose...</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputCounty ">縣市</label>
+                                                        <select id="inputState" class="form-control" name=search_county>
+                                                            <option selected>Choose...</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputState">區域</label>
+                                                        <select id="inputState" class="form-control" name=search_state>
+                                                            <option selected>Choose...</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-5"></div>
+                                                    <div class="col">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            送出</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="flashes">flash測試:
+                                        {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                        <ul class=flashes>
+                                            {% for message in messages %}
+                                            <li>{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                        {% endwith %}
+                                    </div>
+                                </div>
+                                <div class="col-7"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+        </script>
+</body>
+
+</html>
